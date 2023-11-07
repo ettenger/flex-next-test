@@ -15,6 +15,7 @@ export interface InputElement {
   className?: string;
   type?: string;
   placeholder?: string;
+  name: string;
 }
 
 export type PageElement = TextElement | DivElement | InputElement;

@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { PageElement } from "./PageElement.type";
 import { TextComponent } from "./base-components/Text";
