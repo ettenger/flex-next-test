@@ -1,19 +1,22 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { InputElement } from "../PageElement.type";
+import { useFormStore } from "@/store/formStore";
 
 export const InputComponent: FC<InputElement> = ({
   className,
   type,
   placeholder,
+  name,
 }) => {
-  const [value, setValue] = useState("");
+  const { form, update } = useFormStore();
+
   return (
     <input
-      className={className}
+      className={`text-gray-900 ${className}`}
       type={type}
       placeholder={placeholder}
-      onChange={(e) => setValue(e.target.value)}
-      value={value}
+      onChange={(e) => update({ [name]: e.target.value })}
+      value={form[name] || ""}
     />
   );
 };
