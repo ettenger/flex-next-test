@@ -8,7 +8,8 @@ export const InputComponent: FC<InputElement> = ({
   placeholder,
   name,
 }) => {
-  const { form, update } = useFormStore();
+  const update = useFormStore((store) => store.update);
+  const value = useFormStore((store) => store.form[name] || "");
 
   return (
     <input
@@ -16,7 +17,7 @@ export const InputComponent: FC<InputElement> = ({
       type={type}
       placeholder={placeholder}
       onChange={(e) => update({ [name]: e.target.value })}
-      value={form[name] || ""}
+      value={value}
     />
   );
 };
