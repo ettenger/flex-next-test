@@ -12,7 +12,7 @@ export const InputComponent: FC<InputElement> = ({
 
   return (
     <input
-      className={`text-gray-900 ${className}`}
+      className={`text-gray-900 ${className || ""}`}
       type={type}
       placeholder={placeholder}
       onChange={(e) => update({ [name]: e.target.value })}

@@ -3,6 +3,11 @@ export interface TextElement {
   content: string;
 }
 
+export interface VariableElement {
+  element: "variable";
+  variableName: string;
+}
+
 export interface DivElement {
   element: "div";
   className?: string;
@@ -18,4 +23,8 @@ export interface InputElement {
   name: string;
 }
 
-export type PageElement = TextElement | DivElement | InputElement;
+export type PageElement =
+  | TextElement
+  | VariableElement
+  | DivElement
+  | InputElement;

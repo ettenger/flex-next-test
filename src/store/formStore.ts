@@ -8,6 +8,7 @@ type FormStore = {
 
 export const useFormStore = create<FormStore>((set) => ({
   form: {},
-  update: (updates) => set((prevState) => ({ ...prevState, ...updates })),
+  update: (updates) =>
+    set((prevState) => ({ form: { ...prevState.form, ...updates } })),
   clear: () => set({ form: {} }),
 }));

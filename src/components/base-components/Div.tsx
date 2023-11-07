@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { DivElement, PageElement } from "../PageElement.type";
+import { DivElement } from "../PageElement.type";
 import { RenderComponent } from "../RenderComponent";
 
 export const DivComponent: FC<DivElement> = ({

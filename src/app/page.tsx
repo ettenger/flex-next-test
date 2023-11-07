@@ -4,14 +4,20 @@ import { RenderComponent } from "@/components/RenderComponent";
 export default function Home() {
   const pageData: PageElement = {
     element: "div",
-    className: "font-bold",
     children: [
-      { element: "text", content: "hello" },
       {
         element: "input",
         type: "text",
         placeholder: "Your name",
         name: "name",
+      },
+      {
+        element: "div",
+        className: "font-bold",
+        children: [
+          { element: "text", content: "Hello " },
+          { element: "variable", variableName: "name" },
+        ],
       },
     ],
   };
