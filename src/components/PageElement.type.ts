@@ -8,6 +8,12 @@ export interface VariableElement {
   variableName: string;
 }
 
+export interface CalculatedElement {
+  element: "calculated";
+  variableName: string;
+  operator: string;
+}
+
 export interface DivElement {
   element: "div";
   className?: string;
@@ -26,5 +32,6 @@ export interface InputElement {
 export type PageElement =
   | TextElement
   | VariableElement
+  | CalculatedElement
   | DivElement
   | InputElement;

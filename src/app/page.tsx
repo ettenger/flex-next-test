@@ -17,6 +17,19 @@ export default function Home() {
         children: [
           { element: "text", content: "Hello " },
           { element: "variable", variableName: "name" },
+          {
+            element: "div",
+            className: "font-bold",
+            children: [
+              { element: "text", content: "Your name has " },
+              {
+                element: "calculated",
+                variableName: "name",
+                operator: "length",
+              },
+              { element: "text", content: " letters" },
+            ],
+          },
         ],
       },
     ],
