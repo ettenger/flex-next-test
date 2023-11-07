@@ -6,17 +6,17 @@ export const InputComponent: FC<InputElement> = ({
   className,
   type,
   placeholder,
-  name,
+  variableName,
 }) => {
   const update = useFormStore((store) => store.update);
-  const value = useFormStore((store) => store.form[name] || "");
+  const value = useFormStore((store) => store.form[variableName]);
 
   return (
     <input
       className={`text-gray-900 ${className || ""}`}
       type={type}
       placeholder={placeholder}
-      onChange={(e) => update({ [name]: e.target.value })}
+      onChange={(e) => update({ [variableName]: e.target.value })}
       value={value}
     />
   );

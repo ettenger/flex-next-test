@@ -12,6 +12,8 @@ export interface CalculatedElement {
   element: "calculated";
   variableName: string;
   operator: string;
+  resultVariableName?: string;
+  hidden?: boolean;
 }
 
 export interface DivElement {
@@ -26,7 +28,7 @@ export interface InputElement {
   className?: string;
   type?: string;
   placeholder?: string;
-  name: string;
+  variableName: string;
 }
 
 export type PageElement =

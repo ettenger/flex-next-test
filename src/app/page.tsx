@@ -2,6 +2,7 @@ import { PageElement } from "@/components/PageElement.type";
 import { RenderComponent } from "@/components/RenderComponent";
 
 export default function Home() {
+  // NOTE: All variableNames and resultVariableNames must be unique!
   const pageData: PageElement = {
     element: "div",
     children: [
@@ -9,7 +10,14 @@ export default function Home() {
         element: "input",
         type: "text",
         placeholder: "Your name",
-        name: "name",
+        variableName: "name",
+      },
+      {
+        element: "calculated",
+        variableName: "name",
+        operator: "length",
+        resultVariableName: "nameLength", // Note: variableName + upperFirst(operator) could be default
+        hidden: true,
       },
       {
         element: "div",
@@ -22,11 +30,7 @@ export default function Home() {
             className: "font-bold",
             children: [
               { element: "text", content: "Your name has " },
-              {
-                element: "calculated",
-                variableName: "name",
-                operator: "length",
-              },
+              { element: "variable", variableName: "nameLength" },
               { element: "text", content: " letters" },
             ],
           },
