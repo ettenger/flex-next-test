@@ -14,8 +14,14 @@ export default function Home() {
       },
       {
         element: "calculated",
-        variableName: "name",
-        operator: "length",
+        operation: {
+          type: "calculation",
+          operator: "length",
+          argument: {
+            type: "variable",
+            variableName: "name",
+          },
+        },
         resultVariableName: "nameLength", // Note: variableName + upperFirst(operator) could be default
         hidden: true,
       },
